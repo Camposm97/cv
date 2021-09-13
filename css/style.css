@@ -1,0 +1,12 @@
+#img_me {
+    width: 15%; 
+    height: auto;
+}
+
+.fadeIn {
+    opacity: 0;
+}
+
+body {
+    text-align: center;
+}
