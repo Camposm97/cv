@@ -1,12 +1,35 @@
+#my_name {
+    font-size: 40px;
+}
+
+#greeting {
+    font-size: 24px
+}
+
 #img_me {
-    width: 15%; 
+    width: 18%;
     height: auto;
 }
 
-.fadeIn {
+.nav_bar_item {
+    font-size: 24px
+}
+
+.fade_in {
     opacity: 0;
+}
+
+.light_mode {
+    background-color: white;
+    color: black
+}
+
+.dark_mode {
+    background-color: #0a192f;
+    color: white
 }
 
 body {
     text-align: center;
+    font-family: monospace;
 }
