@@ -1,7 +1,18 @@
 window.onload = () => {
-    fadeInElem(0, document.getElementById("img_me"));
-    fadeInElem(0, document.getElementById("my_name"));
-    fadeInElem(0, document.getElementById("greeting"));
+    let elems = document.getElementsByClassName("fade_in");
+    for (let i = 0; i < elems.length; i++) {
+        fadeInElem(0, elems[i]);
+    }
+    elems = document.getElementById("nav_bar").children;
+    for (let i = 0; i < elems.length; i++) {
+        elems[i].onmouseover = (ev) => {
+            elems[i].style.color = "lime";
+        };
+        elems[i].onmouseout = (ev) => {
+            elems[i].style = "";
+        };
+    }
+
 }
 
 function fadeInElem(opacity, elem) {

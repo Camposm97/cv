@@ -12,24 +12,22 @@
 }
 
 .nav_bar_item {
-    font-size: 24px
+    font-size: 24px;
+    position: relative;
+    border: 0px;
+    width: 200px;
 }
 
 .fade_in {
     opacity: 0;
 }
 
-.light_mode {
-    background-color: white;
-    color: black
-}
-
 .dark_mode {
     background-color: #0a192f;
-    color: white
+    color: white;
+    font-family: monospace;
 }
 
 body {
     text-align: center;
-    font-family: monospace;
 }
