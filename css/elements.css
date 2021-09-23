@@ -1,0 +1,39 @@
+#my-name {
+    font-size: 48px;
+}
+
+#greeting {
+    font-size: 24px
+}
+
+#img-me {
+    width: 30%;
+    height: auto;
+    position: relative;
+}
+
+#nav-bar {
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+    text-align: center;
+    font-size: 18pt;
+    border-style: double;
+    border-color: white;
+    /* border-radius: 16px; */
+    padding: 8px;
+    /* margin-inline: 128px; */
+    /* opacity: 0.97; */
+}
+
+#heading-card {
+    text-align: center;
+    color: white;
+    font-family: monospace;
+}
+
+
+body {
+    background-size: contain;
+    background-image: url('../res/circuits-xs.GIF');
+}

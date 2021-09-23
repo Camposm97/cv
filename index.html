@@ -1,22 +1,134 @@
 <html>
     <head>
         <title>Michael Campos</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="images/me_circle.png">
+        <link rel="stylesheet" href="css/elements.css">
+        <link rel="stylesheet" href="css/classes.css">
+        <link rel='stylesheet' href="css/bits.css">
+        <link rel="icon" href="res/me_circle.png">
         <script src="js/App.js"></script>
     </head>
-    <body class="dark_mode">
-        <div id="nav_bar">
-            <input id="bt_about" type="button" value="About" class="nav_bar_item dark_mode">
-            <input id="bt_xp" type="button" value="Experience" class="nav_bar_item dark_mode">
-            <input id="bt_work" type="button" value="Work" class="nav_bar_item dark_mode">
-            <input id="bt_contact" type="button" value="Contact" class="nav_bar_item dark_mode">
+    <body>
+        <!-- NAVIGATION BAR -->
+        <div id="nav-bar" class="dark-mode">
+            <span id="bit-0" class="bit">|</span>
+            <input id="bt-about" type="button" value="About" class="nav-bar-item dark-mode">
+            <span id="bit-1" class="bit">|</span>
+            <input id="bt-xp" type="button" value="Experience" class="nav-bar-item dark-mode">
+            <span id="bit-2" class="bit">|</span>
+            <input id="bt-work" type="button" value="Projects" class="nav-bar-item dark-mode">
+            <span id="bit-3" class="bit">|</span>
+            <input id="bt-contact" type="button" value="Contact" class="nav-bar-item dark-mode">
+            <span id="bit-4" class="bit">|</span>
         </div>
+
+        <!-- HEADING -->
+        <div id="heading-card">
+            <p id="my-name" class="fade-in"><b>Michael Campos</b></p>
+            <img id="img-me" class="fade-in" src="res/me_circle.png">
+            <div>
+                <p id="greeting" class="fade-in"><b>Hello World! Welcome to my Website! &#128512;</b></p>
+                <img id="icon-github" src="res/github.svg" class="filter-invert social-icon fade-in"/>
+                <img id="icon-linkedin" src="res/linkedin.svg" class="filter-invert social-icon fade-in"/>
+                <a href="mailto:camposm1205@gmail.com">
+                    <img id="icon-email" src="res/email.svg" class="filter-invert social-icon fade-in"/>
+                </a>
+            </div>
+        </div>
+
+        <!-- INFO -->
         <div>
-            <p id="my_name" class="fade_in">Michael Campos</p>
-            <img id="img_me" class="fade_in" src="images/me_circle.png">
+            <div id="about-page" class='dark-mode card-view'>  
+                <h1 id="header-about">About</h1>
+                <p style="font-size: 14pt;">
+                    Hello! My name is Michael Campos. I've been programming for 4 years. 
+                    I'm currently a student in my senior year at Stony Brook University studying Computer Science. 
+                    At the moment, I'm looking for internships. If you think I'm a good fit, then please feel free to contact me.
+                </p>
+                <br>
+                <div style="font-size: 14pt;">
+                    <div>
+                        Known Programming Lanaguages:
+                        <ul>
+                            <li>Java</li>
+                            <li>C#</li>
+                            <li>HTML, JavaScript, CSS</li>
+                        </ul>
+                    </div>
+                    <div>
+                        Development Tools:
+                        <ul>
+                            <li>Visual Studio Code</li>
+                            <li>Visual Studio 2019</li>
+                            <li>Android Studio</li>
+                            <li>IntelliJ Community Edition</li>
+                            <li>Umlet</li>
+                            <li>GitKraken</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div id="xp-page" class='dark-mode card-view'>
+                <h1 id="header-xp">Experience</h1>
+                <p >
+                    <li style="font-size: 14pt;">
+                        Computer Science Tutor @ Suffolk County Community College
+                        <p style="margin-left: 40px;">Worked with students to resolve confusion in concepts and critiqued problem solving approach.</p>
+                    </li>
+                    <li style="font-size: 14pt;">
+                        Web Developer @ Society of Hispanic Professional Engineers at Stony Brook University
+                        <p style="margin-left: 40px;">Maintained and updated 
+                            <a style="color:lightblue;" href="http://www.stonybrookshpe.org/" target="_blank">website</a> 
+                            for future planned events.</p>
+                    </li>
+                </p>
+            </div>
+            <div id="work-page" class='dark-mode card-view'>
+                <h1 id="header-work">Projects</h1>
+
+                <div id='projects-container' style="text-align: center;">
+
+                    <a href="https://github.com/Camposm97/BaseConverter-Android" style="color: white;">
+                        <section class="project-dialog">
+                            <h2>Base Converter</h2>
+                            <p>A tool for Computer Science students to quickly convert numbers to different bases 
+                                such as binary or hexadecimal. This app was built on Android using Java.</p>
+                        </section>
+                    </a>
+                    
+                    <a href="https://github.com/sayhimatt/SB-Hackathon-2020" style="color: white;">
+                        <section class='project-dialog'>
+                            <h2>QuickClips</h2>
+                            <p>A hackathon project built on Android using Java to keep a records of pre-written text to keep yourself time efficient.</p>
+                        </section>
+                    </a>
+
+                    <a href="https://github.com/Camposm97/CamposCSE248FinalProject" style="color: white;">
+                        <section class='project-dialog'>
+                            <h2>College Navigator</h2>
+                            <p>An app built on Android using Java to help find the colleges and that will accept you into their school based on your SAT score.</p>
+                        </section>
+                    </a>
+
+                    <section class="project-dialog">
+                        <h2>My Personal Website</h2>
+                        <p>You're on at it right now!</p>
+                        <P>This website will built using vanilla JavaScript.</P>
+                    </section>
+                </div>
+                
+            </div>
+            <div id="contact-page" class='dark-mode card-view'>
+                <h1 id="header-contact">Contact</h1>
+                <ul style="font-size: 14pt;">
+                    <li>Email: <a style="color: lightblue;" href="mailto:camposm1205@gmail.com">camposm1205@gmail.com</a></li>
+                    <br>
+                    <li>LinkedIn: <a style="color: lightblue;" target="_blank" href='https://www.linkedin.com/in/michael-campos1/'>https://www.linkedin.com/in/michael-campos1/</a> </li>
+                </ul>
+            </div>
         </div>
-        <p id="greeting" class="fade_in">Hello World! Welcome to my Website! &#128512;</p>
-        
+        <div style="color: white; text-align: center; font-family: monospace; font-size: 12pt; margin-bottom: 32px;">
+            Website developed by Michael Campos
+        </div>
     </body>
 </html>
