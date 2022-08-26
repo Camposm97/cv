@@ -21,7 +21,7 @@ class App {
                 if (!bit0.classList.contains('on') && !bit1.classList.contains('on') 
                 && bit2.classList.contains('on') && bit3.classList.contains('on') 
                 && bit4.classList.contains('on')) {
-                    window.alert("Good job! You found me! :D");
+                    window.open("https://mcbendorjee-vs-robots.firebaseapp.com/");
                 }
             }
         }
