@@ -75,7 +75,7 @@ class App {
             }
         }
         document.getElementById("icon-github").onclick = (ev) => {
-            window.open('https://github.com/Camposm97');
+            window.open('https://github.com/CamposmDev');
         }
         document.getElementById("icon-linkedin").onclick = (ev) => {
             window.open('https://www.linkedin.com/in/michael-campos1/');
