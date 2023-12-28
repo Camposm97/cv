@@ -3,6 +3,10 @@ class App {
         this.initFadeInAnimations();
         this.initNavBarHandlers();
         this.initIconHandlers();
+        this.initEasterEgg();
+    }
+
+    initEasterEgg() {
         let bits = document.getElementsByClassName('bit');
         for (let i = 0; i < bits.length; i++) {
             bits[i].onclick = (ev) => {
@@ -92,7 +96,7 @@ class App {
     
     scrollToElem(id) {
         document.getElementById(id).scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'auto'
         });
     }
     
@@ -127,7 +131,4 @@ class App {
     }
 }
 
-window.onload = () => {
-    let app = new App();
-    app.launch();
-}
+export default App;

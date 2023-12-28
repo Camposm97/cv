@@ -1,3 +1,9 @@
+#root {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 #my-name {
     font-size: 48px;
 }
@@ -32,7 +38,30 @@
     font-family: monospace;
 }
 
+body {
+    overflow-x: hidden;
+}
 
 body {
-    background-image: url('../res/circuits-xs.GIF');
+    overflow-y: scroll;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: transparent transparent; /* For Firefox */
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
 }
