@@ -3,27 +3,29 @@
         <title>Michael Campos</title>
         <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/elements.css">
-        <link rel="stylesheet" href="css/classes.css">
-        <link rel='stylesheet' href="css/bits.css">
+        <link rel="stylesheet" href="css/main.css">
         <link rel="icon" href="res/me_circle.png">
         <script type="module" src="js/main.js"></script>
     </head>
     <body>
+        <div class='loader-wrapper'>
+            <!-- Loading square for squar.red network -->
+            <span class="loader"><span class="loader-inner"></span></span>
+        </div>
         <canvas id="background"></canvas>
         <canvas id="dots"></canvas>
         <div id="root" >
             <!-- NAVIGATION BAR -->
             <div id="nav-bar" class="dark-mode">
-                <span id="bit-0" class="bit">|</span>
+                <!-- <span id="bit-0" class="bit">|</span> -->
                 <input id="bt-about" type="button" value="About" class="nav-bar-item dark-mode">
-                <span id="bit-1" class="bit">|</span>
+                <!-- <span id="bit-1" class="bit">|</span> -->
                 <input id="bt-xp" type="button" value="Experience" class="nav-bar-item dark-mode">
-                <span id="bit-2" class="bit">|</span>
+                <!-- <span id="bit-2" class="bit">|</span> -->
                 <input id="bt-work" type="button" value="Projects" class="nav-bar-item dark-mode">
-                <span id="bit-3" class="bit">|</span>
+                <!-- <span id="bit-3" class="bit">|</span> -->
                 <input id="bt-contact" type="button" value="Contact" class="nav-bar-item dark-mode">
-                <span id="bit-4" class="bit">|</span>
+                <!-- <span id="bit-4" class="bit">|</span> -->
             </div>
 
             <!-- HEADING -->
@@ -131,7 +133,7 @@
                     </ul>
                 </div>
             </div>
-            <div style="color: white; text-align: center; font-family: monospace; font-size: 12pt; margin-bottom: 32px;">
+            <div class="bottom-text">
                 Website developed by Michael Campos
             </div>
         </div>

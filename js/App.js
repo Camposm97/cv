@@ -3,17 +3,18 @@ class App {
         this.initFadeInAnimations();
         this.initNavBarHandlers();
         this.initIconHandlers();
-        this.initEasterEgg();
+        // this.initEasterEgg();
     }
 
     initEasterEgg() {
+        const bitClass = 'bit-on';
         let bits = document.getElementsByClassName('bit');
         for (let i = 0; i < bits.length; i++) {
             bits[i].onclick = (ev) => {
-                if (bits[i].classList.contains('on')) {
-                    bits[i].classList.remove('on');
+                if (bits[i].classList.contains(bitClass)) {
+                    bits[i].classList.remove(bitClass);
                 } else {
-                    bits[i].classList.add('on');
+                    bits[i].classList.add(bitClass);
                 }
 
                 let bit0 = document.getElementById('bit-0');
@@ -32,6 +33,7 @@ class App {
     }
 
     initNavBarHandlers() {
+        const BLINK_NUM = 5;
         let elems = document.getElementById("nav-bar").children;
         for (let i = 0; i < elems.length; i++) {
             elems[i].onmouseover = (ev) => {
@@ -41,7 +43,6 @@ class App {
                 elems[i].style = "";
             };
             
-            const BLINK_NUM = 5;
             switch (elems[i].id) {
                 case "bt-about":
                     elems[i].onmousedown = (ev) => {
@@ -88,7 +89,6 @@ class App {
     
     initFadeInAnimations() {
         let elems = document.getElementsByClassName("fade-in");
-        let timer = 10;
         for (let i = 0; i < elems.length; i++) {
             this.fadeInElem(0, elems[i]);
         }

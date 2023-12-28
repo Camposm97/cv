@@ -482,7 +482,7 @@ class Background {
         canvas.width = this.width;
         canvas.height = this.height;
 
-        ctx.fillStyle = '#000';
+        ctx.fillStyle = '#000000';
         ctx.fillRect(0, 0, this.width, this.height);
 
         ctx.drawImage(this.dots.canvas, 0, 0);
@@ -499,7 +499,7 @@ export default class BackgroundManager {
             const width = bgCanvas.width = window.innerWidth;
             const height = bgCanvas.height = document.body.scrollHeight
             const bgCtx = bgCanvas.getContext('2d')
-            bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height)
+            // bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height)
     
             
             const dots = new Dots(width, height, 2)
@@ -519,7 +519,7 @@ export default class BackgroundManager {
             const ctx = canvas.getContext('2d')
             canvas.width = width
             canvas.height = height
-            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            // ctx.clearRect(0, 0, canvas.width, canvas.height)
     
             let loop = () => {
                 ctx.clearRect(0, 0, width, height);
