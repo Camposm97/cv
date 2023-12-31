@@ -1,21 +1,17 @@
 #root {
+    font-family: monospace;
     position: absolute;
     left: 0;
     right: 0;
-}
-
-#my-name {
-    font-size: 48px;
+    background-color: #212529
 }
 
 #greeting {
-    font-size: 24px
+    font-size: 24px;
 }
 
 #img-me {
-    width: 30%;
-    height: auto;
-    position: relative;
+    width: 25%;
 }
 
 #nav-bar {
@@ -41,9 +37,6 @@
 
 body {
     overflow-x: hidden;
-}
-
-body {
     overflow-y: scroll;
     scrollbar-width: thin; /* For Firefox */
     scrollbar-color: transparent transparent; /* For Firefox */
@@ -58,33 +51,20 @@ body::-webkit-scrollbar-thumb {
     background-color: transparent;
 }
 
-canvas {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	/* display: block; */
+.heading {
+  text-align: center;
 }
 
-.bit-on {
-    color: lime;
-}
-
-.fade-in {
-    opacity: 0;
-}
-
-.nav-bar-item {
-    font-size: inherit;
-    position: relative;
-    border: 0px;
-    margin: 0px 5px 0px 5px;
-    width: 200px;
+.skills-tile {
+  background-color: rgba(180, 233, 161, 0.03);
+  padding: 10px 10px 5px;
+  width: 100px;
+  margin: 5px 0;
+  border-radius: 8px;
 }
 
 .dark-mode {
-    background-color: #0F0F0F;
+    /* background-color: #0F0F0F; */
     color: white;
     font-family: monospace;
 }
@@ -93,25 +73,24 @@ canvas {
     filter: invert(100%);
 }
 
-.filter-green {
-    /* filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%); */
-    filter: invert(55%) sepia(66%) saturate(3569%) hue-rotate(85deg) brightness(119%) contrast(128%);
+.inactive {
+  opacity: 0.5;
 }
 
+/* .filter-green {
+    filter: invert(55%) sepia(66%) saturate(3569%) hue-rotate(85deg) brightness(119%) contrast(100%);
+} */
+
 .social-icon {
-    width: 48px;
-    height: 48px;
-    margin-left: 8px;
-    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    margin-inline: 8px;
 }
 
 .card-view {
-    border-radius: 16px;
-    border-style: double;
-    border-color: white;
-    padding-block: 32px;
-    padding-inline: 64px;
-    margin-inline: 128px;
+    border-radius: 8px;
+    padding-block: 16px;
+    margin-inline: 32px;
     margin-block: 32px;
     opacity: 0.97;
 }
@@ -136,6 +115,7 @@ canvas {
    font-family: monospace;
    font-size: 12pt;
    margin-bottom: 32px;
+   bottom: 0;
 }
 
 

@@ -1,8 +1,9 @@
 class App {
     launch() {
-        this.initFadeInAnimations();
+        // this.initFadeInAnimations();
         this.initNavBarHandlers();
         this.initIconHandlers();
+        this.initSkillTiles();
         // this.initEasterEgg();
     }
 
@@ -34,34 +35,48 @@ class App {
 
     initNavBarHandlers() {
         const BLINK_NUM = 5;
-        let elems = document.getElementById("nav-bar").children;
+        // let close = function() {};
+        let navbarToggle = document.getElementsByClassName('navbar-toggler');
+        // console.log(close);
+        let elems = document.getElementsByClassName("nav-link");
         for (let i = 0; i < elems.length; i++) {
-            elems[i].onmouseover = (ev) => {
-                elems[i].style.color = "lime";
-            };
-            elems[i].onmouseout = (ev) => {
-                elems[i].style = "";
-            };
+            // elems[i].onmouseover = (ev) => {
+            //     elems[i].style.color = "lime";
+            // };
+            // elems[i].onmouseout = (ev) => {
+            //     elems[i].style = "";
+            // };
             
             switch (elems[i].id) {
-                case "bt-about":
+                case "item-about":
                     elems[i].onmousedown = (ev) => {
-                        this.scrollToElemAndBlink("about-page", "header-about", BLINK_NUM);
+                        console.info('show about')
+                        if (navbarToggle) navbarToggle[0].click();
+                        this.scrollToElem("about-section");
                     };
                     break;
-                case "bt-xp":
+                case "item-skills":
                     elems[i].onmousedown = (ev) => {
-                        this.scrollToElemAndBlink("xp-page", "header-xp", BLINK_NUM);
+                        console.info('show skills')
+                        if (navbarToggle) navbarToggle[0].click();
+                        this.scrollToElem("skills-section")
+                        // this.scrollToElemAndBlink("work-page", "header-work", BLINK_NUM);
                     };
                     break;
-                case "bt-work":
+                case "item-experience":
                     elems[i].onmousedown = (ev) => {
-                        this.scrollToElemAndBlink("work-page", "header-work", BLINK_NUM);
+                        console.info('show experience')
+                        if (navbarToggle) navbarToggle[0].click();
+                        this.scrollToElem("xp-section")
+                        // this.scrollToElemAndBlink("xp-page", "header-xp", BLINK_NUM);
                     };
                     break;
-                case "bt-contact":
+                case "item-projects":
                     elems[i].onmousedown = (ev) => {
-                        this.scrollToElemAndBlink("contact-page", "header-contact", BLINK_NUM);
+                        console.info('show projects')
+                        if (navbarToggle) navbarToggle[0].click();
+                        this.scrollToElem("projects-section")
+                        // this.scrollToElemAndBlink("contact-page", "header-contact", BLINK_NUM);
                     };
                     break;
             }
@@ -71,12 +86,11 @@ class App {
     initIconHandlers() {
         let icons = document.getElementsByClassName("social-icon");
         for (let i = 0; i < icons.length; i++) {
-            let icon = icons[i];
-            icon.onmouseover = (ev) => {
-                icon.classList.add("filter-green");
+            icons[i].onmouseover = (ev) => {
+                icons[i].classList.remove("inactive");
             }
-            icon.onmouseout = (ev) => {
-                icon.classList.remove("filter-green");
+            icons[i].onmouseout = (ev) => {
+                icons[i].classList.add("inactive");
             }
         }
         document.getElementById("icon-github").onclick = (ev) => {
@@ -99,36 +113,79 @@ class App {
             behavior: 'auto'
         });
     }
-    
-    fadeInElem(opacity, elem) {
-        let self = this;
-        if (opacity < 1) {
-            opacity += .01;
-            setTimeout(function() {
-                self.fadeInElem(opacity, elem)
-            }, 0.1); // 0.1 Milliseconds
+
+    initSkillTiles() {
+        const skillMap = new Map([
+            ['Java', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'],
+            ['HTML 5', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'],
+            ['CSS 3', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'],
+            ['Javascript', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'],
+            ['Typescript', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'],
+            ['Node', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'],
+            ['React', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'],
+            ['MongoDB', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'],
+            ['MUI', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg'],
+            ['MySQL', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'],
+            ['SQLite', 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg']
+        ]);
+        let skillList = document.getElementById('skill-list');
+        for (const entry of skillMap) {
+            skillList.appendChild(this.initSkillItem(entry[0], entry[1]));
         }
-        elem.style.opacity = opacity;
-    }
-    
-    blinkerElem(amount, elem) {
-        let self = this;
-        if (amount > 0) {
-            setTimeout(function() {
-                elem.style.color = "lime";
-                setTimeout(function() {
-                    elem.style.color = "";
-                    self.blinkerElem(amount-1, elem);
-                }, 200);
-            }, 200);
-        }
-        elem.style.color = "";
     }
 
-    scrollToElemAndBlink(idToScrollTo, idToBlink, amount) {
-        this.scrollToElem(idToScrollTo);
-        this.blinkerElem(amount, document.getElementById(idToBlink));
+    /**
+     * @param {string} displayName
+     * @param {string} imgSrc
+     */
+    initSkillItem(displayName, imgSrc) {
+        let pName = document.createElement('p');
+        pName.className = 'text-center';
+        pName.style = 'font-size: 100%; margin-top: 4px;';
+        pName.innerHTML = displayName;
+        let imgElem = document.createElement('img');
+        imgElem.src = imgSrc;
+        let skillTile = document.createElement('div');
+        skillTile.className = 'text-center skills-tile';
+        skillTile.appendChild(imgElem);
+        skillTile.appendChild(pName);
+        let spanElem = document.createElement('span');
+        spanElem.appendChild(skillTile);
+        let listItem = document.createElement('li');
+        listItem.className = 'list-inline-item mx-3 skill-icon'
+        listItem.appendChild(spanElem);
+        return listItem;
     }
+    
+    // fadeInElem(opacity, elem) {
+    //     let self = this;
+    //     if (opacity < 1) {
+    //         opacity += .01;
+    //         setTimeout(function() {
+    //             self.fadeInElem(opacity, elem)
+    //         }, 0.1); // 0.1 Milliseconds
+    //     }
+    //     elem.style.opacity = opacity;
+    // }
+    
+    // blinkerElem(amount, elem) {
+    //     let self = this;
+    //     if (amount > 0) {
+    //         setTimeout(function() {
+    //             elem.style.color = "lime";
+    //             setTimeout(function() {
+    //                 elem.style.color = "";
+    //                 self.blinkerElem(amount-1, elem);
+    //             }, 200);
+    //         }, 200);
+    //     }
+    //     elem.style.color = "";
+    // }
+
+    // scrollToElemAndBlink(idToScrollTo, idToBlink, amount) {
+    //     this.scrollToElem(idToScrollTo);
+    //     this.blinkerElem(amount, document.getElementById(idToBlink));
+    // }
 }
 
 export default App;

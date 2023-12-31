@@ -1,8 +1,8 @@
 import App from "./App.js";
-import BackgroundManager from "./circuits/BackgroundManager.js";
+// import BackgroundManager from "./circuits/BackgroundManager.js";
 
-const bgm = new BackgroundManager();
-bgm.start();
+// const bgm = new BackgroundManager();
+// bgm.start();
 const app = new App();
 app.launch();
 
