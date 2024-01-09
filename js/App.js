@@ -34,7 +34,7 @@ class App {
     }
 
     initNavBarHandlers() {
-        const BLINK_NUM = 5;
+        // const BLINK_NUM = 5;
         // let close = function() {};
         let navbarToggle = document.getElementsByClassName('navbar-toggler');
         // console.log(close);
