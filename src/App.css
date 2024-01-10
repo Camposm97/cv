@@ -1,4 +1,29 @@
 body {
   font-family: monospace;
-  background-color: #2B3035;
+  /* background-color: #2B3035; */
+}
+
+.filter-invert {
+  filter: invert(100%);
+}
+
+.inactive {
+  opacity: 0.5;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    margin-inline: 8px;
+    margin-block: 10px;
+    box-shadow: none;
+}
+
+.social-icon:hover, .social-icon:active {
+  /* box-shadow: 0 0 5px #fffee0, inset 0 0 10px #fffee0;
+   */
+   -webkit-box-shadow:0 0 15px #ffffff; 
+    -moz-box-shadow: 0 0 15px #ffffff;
+    -ms-box-shadow: 0 0 15px #ffffff; 
+    box-shadow:0 0 15px #ffffff;
 }
