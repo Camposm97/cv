@@ -33,11 +33,3 @@ body {
   border-radius: 15px;
   box-shadow: 0 0 4px #000000;
 }
-
-.card-view {
-  border-radius: 8px;
-  padding-block: 16px;
-  margin-inline: 32px;
-  margin-block: 32px;
-  opacity: 0.97;
-}

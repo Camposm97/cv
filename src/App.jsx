@@ -3,7 +3,7 @@ import './App.css'
 import { Container } from 'react-bootstrap';
 import AboutContainer from './components/About.Container';
 import SkillContainer from './components/SkillContainer';
-import ExperienceContainer from './components/ExperienceContainer';
+import JobContainer from './components/JobContainer';
 import ProjectsContainer from './components/ProjectsContainer';
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
       <NavMenu/>
       <AboutContainer/>
       <SkillContainer/>
-      <ExperienceContainer/>
+      <JobContainer/>
       <ProjectsContainer/>
     </Container>
   );

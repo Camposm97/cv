@@ -1,12 +1,12 @@
-import { Card } from "react-bootstrap";
+import Card from 'react-bootstrap/Card';
 
 const ProjectCard = (props) => {
-    const {title, desc} = props;
+    const {proj} = props;
     return (
         <Card>
             <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>{desc}</Card.Text>
+                <Card.Title>{proj.title}</Card.Title>
+                <Card.Text>{proj.desc}</Card.Text>
             </Card.Body>
         </Card>
     )
