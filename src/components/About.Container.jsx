@@ -1,10 +1,13 @@
+import { Container, Row, Col, Image } from "react-bootstrap";
+import SocialBar from "./SocialBar";
+
 const AboutContainer = () => {
     return (
         <Container fluid className='d-flex justify-content-center mt-2 mb-2'>
         <Row>
           <Col sx={12} className='text-center'>
             <Image src='favicon.png' fluid thumbnail roundedCircle
-              style={{maxWidth: '40%'}}></Image>
+              style={{maxWidth: '35%'}}></Image>
             <h4>Hello World! Welcome to my Website! &#129299;</h4>
             {/* Contacts */}
             <SocialBar/>

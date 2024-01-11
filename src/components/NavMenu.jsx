@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 const NavMenu = () => {
     const NAME = 'Michael Campos';    
     return (
-        <Navbar collapseOnSelect expand='lg' className="bg-body">
+        <Navbar sticky='top' collapseOnSelect expand='lg' className="bg-body">
             <Navbar.Brand>{NAME}</Navbar.Brand >
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">

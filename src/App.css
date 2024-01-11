@@ -12,18 +12,32 @@ body {
 }
 
 .social-icon {
-    width: 48px;
-    height: 48px;
-    margin-inline: 8px;
-    margin-block: 10px;
-    box-shadow: none;
+  width: 48px;
+  height: 48px;
+  margin-inline: 8px;
+  margin-block: 8px;
 }
 
-.social-icon:hover, .social-icon:active {
-  /* box-shadow: 0 0 5px #fffee0, inset 0 0 10px #fffee0;
-   */
-   -webkit-box-shadow:0 0 15px #ffffff; 
-    -moz-box-shadow: 0 0 15px #ffffff;
-    -ms-box-shadow: 0 0 15px #ffffff; 
-    box-shadow:0 0 15px #ffffff;
+.social-icon:hover,
+.social-icon:active {
+  -webkit-box-shadow: 0 0 15px #ffffff;
+  -moz-box-shadow: 0 0 15px #ffffff;
+  -ms-box-shadow: 0 0 15px #ffffff;
+  box-shadow: 0 0 15px #ffffff;
+}
+
+.skills-tile {
+  background-color: rgba(180, 233, 161, 0.03);
+  padding: 8px 8px 0px 8px;
+  width: 100px;
+  border-radius: 15px;
+  box-shadow: 0 0 4px #000000;
+}
+
+.card-view {
+  border-radius: 8px;
+  padding-block: 16px;
+  margin-inline: 32px;
+  margin-block: 32px;
+  opacity: 0.97;
 }
