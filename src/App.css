@@ -1,14 +1,9 @@
 body {
   font-family: monospace;
-  /* background-color: #2B3035; */
 }
 
 .filter-invert {
   filter: invert(100%);
-}
-
-.inactive {
-  opacity: 0.5;
 }
 
 .social-icon {
@@ -16,14 +11,11 @@ body {
   height: 48px;
   margin-inline: 8px;
   margin-block: 8px;
+  opacity: 0.5;
 }
 
-.social-icon:hover,
-.social-icon:active {
-  -webkit-box-shadow: 0 0 15px #ffffff;
-  -moz-box-shadow: 0 0 15px #ffffff;
-  -ms-box-shadow: 0 0 15px #ffffff;
-  box-shadow: 0 0 15px #ffffff;
+.social-icon:hover {
+  opacity: 1.0;
 }
 
 .skills-tile {
@@ -31,5 +23,9 @@ body {
   padding: 8px 8px 0px 8px;
   width: 100px;
   border-radius: 15px;
-  box-shadow: 0 0 4px #000000;
+  box-shadow: 4px 2px 4px #000000;
+}
+
+.card {
+  box-shadow: 4px 2px 4px #000000;
 }

@@ -1,9 +1,9 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { NAME } from '../util/Constants';
 
 const NavMenu = (props) => {
     const { refs } = props;
-    const NAME = 'Michael Campos';
     const handleClick = (ref) => {
         ref.current.scrollIntoView();
     }    
