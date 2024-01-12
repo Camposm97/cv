@@ -39,7 +39,7 @@ const JOBS = [
     {
         title: 'Web Master',
         company: 'Society of Hispanic Professional Engineers at Stony Brook University',
-        desc: 'Maintained and updated SHPE website for future planned events',
+        desc: 'Maintained and updated SHPE website for future planned events.',
         date: 'Sep 2021 - May 2023'
     }
 ]
