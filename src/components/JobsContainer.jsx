@@ -2,8 +2,9 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import JobCard from "./JobCard";
 import { Container } from 'react-bootstrap';
+import { forwardRef } from 'react';
 
-const ExperienceContainer = () => {
+const JobsContainer = (props, ref) => {
     const arr = [
         {
             title: 'Undergraduate Teaching Assistant',
@@ -25,9 +26,9 @@ const ExperienceContainer = () => {
         }
     ]
     return (
-        <Container fluid>
+        <Container ref={ref} fluid className='mt-2'>
             <h1 className="text-center">Experience</h1>
-            <Row xs={1} md={2} lg={3} xl={4}>
+            <Row xs={1} md={2} lg={3}>
                 {arr.map(x =>
                     <Col key={x.title} >
                         <JobCard job={x}/>
@@ -38,4 +39,4 @@ const ExperienceContainer = () => {
     );
 }
 
-export default ExperienceContainer;
+export default forwardRef(JobsContainer);

@@ -2,8 +2,9 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import ProjectCard from "./ProjectCard";
 import { Container } from 'react-bootstrap';
+import { forwardRef } from 'react';
 
-const ProjectsContainer = () => {
+const ProjectsContainer = (props, ref) => {
     const arr = [
         {
             title: 'Base Converter',
@@ -19,9 +20,9 @@ const ProjectsContainer = () => {
         }
     ]
     return (
-        <Container fluid>
+        <Container ref={ref} fluid className='mt-2'>
             <h1 className="text-center">Projects</h1>
-            <Row xs={1} md={2} lg={3} xl={4}>
+            <Row xs={1} md={2} lg={3}>
                 {arr.map(x =>
                     <Col key={x.title}>
                         <ProjectCard proj={x} />
@@ -32,4 +33,4 @@ const ProjectsContainer = () => {
     );
 }
 
-export default ProjectsContainer;
+export default forwardRef(ProjectsContainer);

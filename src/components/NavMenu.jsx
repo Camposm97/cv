@@ -1,18 +1,22 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-const NavMenu = () => {
-    const NAME = 'Michael Campos';    
+const NavMenu = (props) => {
+    const { refs } = props;
+    const NAME = 'Michael Campos';
+    const handleClick = (ref) => {
+        ref.current.scrollIntoView();
+    }    
     return (
         <Navbar sticky='top' collapseOnSelect expand='lg' className="bg-body">
             <Navbar.Brand>{NAME}</Navbar.Brand >
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href='#about'>// About</Nav.Link>
-                    <Nav.Link href='#skills' >// Skills</Nav.Link>
-                    <Nav.Link href='#experience' >// Experience</Nav.Link>
-                    <Nav.Link href='#projects'>// Projects</Nav.Link>
+                    <Nav.Link href='#about' onClick={() => handleClick(refs.about)}>// About</Nav.Link>
+                    <Nav.Link href='#skills' onClick={() => handleClick(refs.skill)}>// Skills</Nav.Link>
+                    <Nav.Link href='#experience' onClick={() => handleClick(refs.job)}>// Experience</Nav.Link>
+                    <Nav.Link href='#projects' onClick={() => handleClick(refs.proj)}>// Projects</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
