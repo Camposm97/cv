@@ -5,7 +5,10 @@ import { SOCIAL_CONTACTS } from "../util/Constants";
 const SocialBar = () => {
     return (
         <Container>
-            {SOCIAL_CONTACTS.map(x => <SocialIcon key={x.id} id={x.id} src={x.src} link={x.link}/>)}
+            {SOCIAL_CONTACTS.map(props => 
+                <SocialIcon key={props.id} 
+                    {...props}
+                />)}
         </Container>
     )
 }

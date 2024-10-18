@@ -1,9 +1,9 @@
 import { Image } from "react-bootstrap";
 
-const SocialIcon = ({id, src, link}) => {
-    let elem = <Image id={id} src={src} className={'filter-invert social-icon'}/>
-    if (link) elem = <a href={link} target="_blank">{elem}</a>
-    return elem;
+const SocialIcon = (props) => {
+    return <a href={props.link} target="_blank">
+        <Image {...props} className='filter-invert social-icon'></Image>
+    </a>
 }
 
 export default SocialIcon;

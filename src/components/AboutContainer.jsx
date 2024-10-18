@@ -3,14 +3,17 @@ import SocialBar from "./SocialBar";
 import { forwardRef } from "react";
 import TypeWriter from "./TypeWriter";
 import { ABOUT_HEAD, ABOUT_DESC } from "../util/Constants";
+import { Element } from "react-scroll";
 
 const AboutContainer = (props, ref) => {
-  
   return (
-    <Container ref={ref} fluid className='d-flex justify-content-center mt-2'>
+    <Element name="about">
+
+    <Container fluid className='d-flex justify-content-center mt-2'>
+      <div ref={ref}/>
       <Row>
         <Col className='text-center'>
-          <Image src='favicon.png' thumbnail roundedCircle
+          <Image src='favicon-min.png' thumbnail roundedCircle
             style={{ maxWidth: '30%'}}></Image>
           <h4><TypeWriter text={ABOUT_HEAD} speed={50}></TypeWriter></h4>
           {/* Contacts */}
@@ -19,6 +22,7 @@ const AboutContainer = (props, ref) => {
         </Col>
       </Row>
     </Container>
+    </Element>
   );
 }
 

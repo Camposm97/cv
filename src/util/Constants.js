@@ -1,11 +1,29 @@
+
 const NAME = 'Michael Campos'
 const ABOUT_HEAD = 'Hello World! Welcome to my Website! 🤓'
 const ABOUT_DESC = "Computer Science graduate with 5 years of programming experience. Currently, I'm currently seeking full-time/internship opportunities to apply my skills and contribute to innovative projects. If you think I'd be a good fit, please feel free to contact me."
 
-const SOCIAL_CONTACTS = [
-    { id: 'github', src: 'github.svg', link: 'https://github.com/CamposmDev' },
-    { id: 'linkedin', src: 'linkedin.svg', link: 'https://linkedin.com/in/michael-campos1' },
-    { id: 'email', src: 'email.svg', link: 'mailto:camposm.dev@gmail.com' }
+
+
+const SOCIAL_PROPS = [
+    {
+        id: 'github',
+        src: 'github.svg',
+        link: 'https://github.com/CamposmDev',
+        alt: 'github-icon',
+    },
+    {
+        id: 'linkedin',
+        src: 'linkedin.svg',
+        link: 'https://linkedin.com/in/michael-campos1',
+        alt: 'linkedin-icon',
+    },
+    {
+        id: 'email',
+        src: 'email.svg',
+        link: 'mailto:camposm.work@gmail.com',
+        alt: 'email-icon',
+    },
 ]
 
 const SKILLS = [
@@ -63,7 +81,7 @@ export {
     NAME,
     ABOUT_HEAD,
     ABOUT_DESC,
-    SOCIAL_CONTACTS,
+    SOCIAL_PROPS as SOCIAL_CONTACTS,
     SKILLS,
     JOBS,
     PROJECTS
