@@ -5,28 +5,25 @@ import AboutContainer from './components/AboutContainer';
 import SkillContainer from './components/SkillContainer';
 import JobsContainer from './components/JobsContainer';
 import ProjectsContainer from './components/ProjectsContainer';
-import { useRef } from 'react';
-
-const Footer = () => {
-  return (
-    <Container fluid className='text-center' style={{margin: '100px 0px 0px 0px'}}>
-      <p>Developed by Michael Campos</p>
-    </Container>
-  )
-}
+import Footer from './components/Footer';
+import { forwardRef, useRef } from 'react';
+import AcademicsContainer from './components/AcademicsContainer';
 
 const App = () => {
   const aboutRef = useRef(null);
+  const acadRef = useRef(null);
   const skillRef = useRef(null);
   const jobRef = useRef(null);
   const projRef = useRef(null);
+
   return (
-    <Container fluid className='App'>
-      <NavMenu refs={{about: aboutRef, skill: skillRef, job: jobRef, proj: projRef}}/>
-      <AboutContainer ref={aboutRef}/>
-      <SkillContainer ref={skillRef}/>
-      <JobsContainer ref={jobRef}/>
-      <ProjectsContainer ref={projRef}/>
+    <Container className='App'>
+      <NavMenu refs={{about: aboutRef, acad: acadRef, skill: skillRef, job: jobRef, proj: projRef}}/>
+      <AboutContainer ref={aboutRef} />
+      <AcademicsContainer ref={acadRef} />
+      <SkillContainer ref={skillRef} />
+      <JobsContainer ref={jobRef} />
+      <ProjectsContainer ref={projRef} />
       <Footer/>
     </Container>
   );

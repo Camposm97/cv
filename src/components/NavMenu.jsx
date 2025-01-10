@@ -14,6 +14,7 @@ const NavMenu = (props) => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                     <Nav.Link href='#about' onClick={() => handleClick(refs.about)}>// About</Nav.Link>
+                    <Nav.Link href='#academics' onClick={() => handleClick(refs.acad)}>// Academics</Nav.Link>
                     <Nav.Link href='#skills' onClick={() => handleClick(refs.skill)}>// Skills</Nav.Link>
                     <Nav.Link href='#experience' onClick={() => handleClick(refs.job)}>// Experience</Nav.Link>
                     <Nav.Link href='#projects' onClick={() => handleClick(refs.proj)}>// Projects</Nav.Link>

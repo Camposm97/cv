@@ -1,27 +1,43 @@
 import { useState, useEffect } from "react";
+/**
+ * @typedef {object} TypeWriterProps
+ * @property {string} text Text to be displayed
+ * @property {speed} number Show fast each character appears in milliseconds
+ * @property {string} cursor Cursor to be shown at end of text
+ * @property {boolean} hideCursor Determines if cursor is shown at end of text
+ */
 
-const TypeWriter = ({text, speed, cursor='█'}) => {
+/**
+ * @param {TypeWriterProps} props
+ */
+const TypeWriter = ({text, speed=20, cursor='█', hideCursor=false}) => {
     const [currText, setCurrText] = useState('');
     const [currIndex, setCurrIndex] = useState(0);
+    const [showCursor, setShowCursor] = useState(false)
+
     useEffect(() => {
-        const printNextChar = () => {
-            setCurrText(prev => prev + text[currIndex]);
-            setCurrIndex(currIndex + 1);
-        }
         if (currIndex < text.length) {
-            const timer = setTimeout(printNextChar, speed);
+            const timer = setTimeout(() => {
+                setCurrText(prev => prev + text[currIndex])
+                setCurrIndex(currIndex + 1)
+            }, speed);
             return () => clearTimeout(timer);
+        } else if (!hideCursor) {
+            const blinkTimer = setInterval(() => {
+                setShowCursor(prev => !prev)
+            }, 500)
+            return () => clearInterval(blinkTimer)
         }
-        //  else {
-        //     /* remove cursor */
-        //     const timer = setTimeout(() => setCurrText(prev => prev.substring(0, prev.length-1)), 500);
-        //     return () => clearTimeout(timer);
-        // }
     }, [currIndex])
     
-    if (currIndex < text.length)
-        return <span>{currText + cursor}</span>
-    return <span>{currText}</span>;
+    return (
+        <span>
+            {currText}
+            <span className='cursor' style={{opacity: showCursor ? 1 : 0}}>
+                {cursor}
+            </span>
+        </span>
+    )
 }
 
 export default TypeWriter;

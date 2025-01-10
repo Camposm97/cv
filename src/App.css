@@ -2,30 +2,26 @@ body {
   font-family: monospace;
 }
 
-.filter-invert {
-  filter: invert(100%);
-}
-
 .social-icon {
+  margin: 16px;
   width: 48px;
   height: 48px;
-  margin-inline: 8px;
-  margin-block: 8px;
-  opacity: 0.5;
-}
-
-.social-icon:hover {
-  opacity: 1.0;
 }
 
 .skills-tile {
+  font-size: 0.8rem;
   background-color: rgba(180, 233, 161, 0.03);
   padding: 8px 8px 0px 8px;
-  width: 100px;
-  border-radius: 15px;
+  width: 120px;
+  border-radius: 8px;
   box-shadow: 4px 2px 4px #000000;
 }
 
 .card {
   box-shadow: 4px 2px 4px #000000;
+}
+
+.cursor {
+  display: inline-block;
+  width: 1ch;
 }
